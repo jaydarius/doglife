@@ -15,11 +15,12 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
-export function Menu() {
+// @ts-ignore
+export function Menu({dict}) {
   return (
     <Menubar className="rounded-none border-b border-none px-2 lg:px-4">
       <MenubarMenu>
-        <MenubarTrigger className="font-bold">Music</MenubarTrigger>
+        <MenubarTrigger className="font-bold">{dict.menubar.dogs}</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>About Music</MenubarItem>
           <MenubarSeparator />
@@ -39,7 +40,7 @@ export function Menu() {
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
-      <MenubarMenu>
+      {/* <MenubarMenu>
         <MenubarTrigger className="relative">File</MenubarTrigger>
         <MenubarContent>
           <MenubarSub>
@@ -178,9 +179,9 @@ export function Menu() {
             Enter Full Screen
           </MenubarItem>
         </MenubarContent>
-      </MenubarMenu>
+      </MenubarMenu> */}
       <MenubarMenu>
-        <MenubarTrigger className="hidden md:block">Account</MenubarTrigger>
+        <MenubarTrigger className="hidden md:block">{dict.menubar.account}</MenubarTrigger>
         <MenubarContent forceMount>
           <MenubarLabel inset>Switch Account</MenubarLabel>
           <MenubarSeparator />

@@ -6,28 +6,28 @@ export interface Album {
 
 export const listenNowAlbums: Album[] = [
   {
-    name: "React Rendezvous",
-    artist: "Ethan Byte",
+    name: "Duke",
+    artist: "Austin, TX",
     cover:
-      "https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=300&dpr=2&q=80",
+      "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1324&q=80",
   },
   {
-    name: "Async Awakenings",
-    artist: "Nina Netcode",
+    name: "Coffee",
+    artist: "San Francisco, CA",
     cover:
-      "https://images.unsplash.com/photo-1468817814611-b7edf94b5d60?w=300&dpr=2&q=80",
+      "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZG9nfGVufDB8fDB8fHwy&auto=format&fit=crop&w=800&q=60",
   },
   {
-    name: "The Art of Reusability",
-    artist: "Lena Logic",
+    name: "Bowser",
+    artist: "NH Amsterdam",
     cover:
-      "https://images.unsplash.com/photo-1528143358888-6d3c7f67bd5d?w=300&dpr=2&q=80",
+      "https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGRvZ3xlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=800&q=60",
   },
   {
-    name: "Stateful Symphony",
-    artist: "Beth Binary",
+    name: "Turbo",
+    artist: "Austin, TX",
     cover:
-      "https://images.unsplash.com/photo-1490300472339-79e4adc6be4a?w=300&dpr=2&q=80",
+      "https://images.unsplash.com/photo-1529429617124-95b109e86bb8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGRvZ3xlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=800&q=60",
   },
 ];
 

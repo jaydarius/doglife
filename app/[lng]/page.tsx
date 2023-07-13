@@ -14,12 +14,18 @@ import { Sidebar } from "@/components/sidebar";
 import { listenNowAlbums, madeForYouAlbums } from "@/data/albums";
 import { playlists } from "@/data/playlists";
 
+import { getDictionary } from "@/lib/dictionaries";
+import { LocaleAbbr } from "@/constants/locales";
+
 export const metadata: Metadata = {
   title: "Music App",
   description: "Example music app using the components.",
 };
 
-export default function MusicPage({params}: {params: {lng: string}}) {
+export default function MusicPage({params}: {params: {lng: LocaleAbbr}}) {
+   // Access dictionary
+   const dict = getDictionary(params.lng);
+  
   return (
     <>
       <div className="md:hidden">
@@ -39,32 +45,34 @@ export default function MusicPage({params}: {params: {lng: string}}) {
         />
       </div>
       <div className="hidden md:block">
-        <Menu />
+        <Menu dict={dict} />
         <div className="border-t">
           <div className="bg-background">
             <div className="grid lg:grid-cols-5">
               
-              <Sidebar playlists={playlists} className="hidden lg:block" />
+              <Sidebar playlists={playlists} dict={dict} className="hidden lg:block" />
               <div className="col-span-3 lg:col-span-4 lg:border-l">
                 <div className="h-full px-4 py-6 lg:px-8">
                   <Tabs defaultValue="music" className="h-full space-y-6">
                     <div className="space-between flex items-center">
                       <TabsList>
                         <TabsTrigger value="music" className="relative">
-                          Music
+                          {/* @ts-ignore */}
+                          {dict.home.tabs.dogs}
                         </TabsTrigger>
-                        <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
+                        {/* @ts-ignore */}
+                        <TabsTrigger value="podcasts">{dict.home.tabs.shelters}</TabsTrigger>
                         <TabsTrigger value="live" disabled>
-                          Live
+                          {/* @ts-ignore */}
+                        {dict.home.tabs.wolves}
                         </TabsTrigger>
                       </TabsList>
-                      <div className="ml-auto mr-4">
-                      <h1>{params.lng}</h1>
+                      {/* <div className="ml-auto mr-4">
                         <Button>
                           <PlusCircledIcon className="mr-2 h-4 w-4" />
                           Add music
                         </Button>
-                      </div>
+                      </div> */}
                     </div>
                     <TabsContent
                       value="music"
@@ -73,10 +81,12 @@ export default function MusicPage({params}: {params: {lng: string}}) {
                       <div className="flex items-center justify-between">
                         <div className="space-y-1">
                           <h2 className="text-2xl font-semibold tracking-tight">
-                            Listen Now
+                            {/* @ts-ignore */}
+                            {dict.home.viewNow}
                           </h2>
                           <p className="text-sm text-muted-foreground">
-                            Top picks for you. Updated daily.
+                            {/* @ts-ignore */}
+                          {dict.home.topPicks}
                           </p>
                         </div>
                       </div>
@@ -98,32 +108,7 @@ export default function MusicPage({params}: {params: {lng: string}}) {
                           <ScrollBar orientation="horizontal" />
                         </ScrollArea>
                       </div>
-                      <div className="mt-6 space-y-1">
-                        <h2 className="text-2xl font-semibold tracking-tight">
-                          Made for You
-                        </h2>
-                        <p className="text-sm text-muted-foreground">
-                          Your personal playlists. Updated daily.
-                        </p>
-                      </div>
-                      <Separator className="my-4" />
-                      <div className="relative">
-                        <ScrollArea>
-                          <div className="flex space-x-4 pb-4">
-                            {madeForYouAlbums.map((album) => (
-                              <AlbumArtwork
-                                key={album.name}
-                                album={album}
-                                className="w-[150px]"
-                                aspectRatio="square"
-                                width={150}
-                                height={150}
-                              />
-                            ))}
-                          </div>
-                          <ScrollBar orientation="horizontal" />
-                        </ScrollArea>
-                      </div>
+                     {/* <PersonalPlaylists /> */}
                     </TabsContent>
                     <TabsContent
                       value="podcasts"
@@ -152,3 +137,30 @@ export default function MusicPage({params}: {params: {lng: string}}) {
     </>
   );
 }
+
+const PersonalPlaylists = () => <><div className="mt-6 space-y-1">
+<h2 className="text-2xl font-semibold tracking-tight">
+  Made for You
+</h2>
+<p className="text-sm text-muted-foreground">
+  Your personal playlists. Updated daily.
+</p>
+</div>
+<Separator className="my-4" />
+<div className="relative">
+<ScrollArea>
+  <div className="flex space-x-4 pb-4">
+    {madeForYouAlbums.map((album) => (
+      <AlbumArtwork
+        key={album.name}
+        album={album}
+        className="w-[150px]"
+        aspectRatio="square"
+        width={150}
+        height={150}
+      />
+    ))}
+  </div>
+  <ScrollBar orientation="horizontal" />
+</ScrollArea>
+</div></>

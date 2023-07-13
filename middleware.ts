@@ -20,7 +20,6 @@ function getLocale(request: NextRequest): string | undefined {
 
 const defaultLocale = "en";
 
-
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
@@ -30,8 +29,6 @@ export function middleware(request: NextRequest) {
   if (regex.test(pathname)) return;
 
 
-
-  
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`

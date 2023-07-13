@@ -1,0 +1,19 @@
+{
+    "home": {
+        "viewNow": "View Now",
+        "topPicks": "Top picks for you. Updated daily.",
+        "tabs": {
+            "dogs": "Dogs",
+            "shelters": "Shelters",
+            "wolves": "Wolves"
+        }
+    },
+    "sidebar": {
+        "discover": "Discover",
+        "browse": "Browse"
+    },
+    "menubar": {
+        "dogs": "Dogs",
+        "account": "Account"
+    }
+}

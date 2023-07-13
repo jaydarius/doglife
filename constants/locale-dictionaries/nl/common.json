@@ -1,0 +1,19 @@
+{
+    "home": {
+        "viewNow": "Jetzt ansehen",
+        "topPicks": "Top-Auswahl für Sie. Täglich aktualisiert.",
+        "tabs": {
+            "dogs": "Hunde",
+            "shelters": "Tierheime",
+            "wolves": "Wölfe"
+        }
+    },
+    "sidebar": {
+        "discover": "Entdecken",
+        "browse": "Stöbern"
+    },
+    "menubar": {
+        "dogs": "Hunde",
+        "account": "Konto"
+    }
+}
