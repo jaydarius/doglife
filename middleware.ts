@@ -29,24 +29,7 @@ export function middleware(request: NextRequest) {
 
   if (regex.test(pathname)) return;
 
-  // Cleanup default locale url
-  if (
-    pathname.startsWith(`/${defaultLocale}/`) ||
-    pathname === `/${defaultLocale}`
-  ) {
-    const defaultLocale = "en";
-    // e.g. incoming request is /en/products
-    // The new URL is now /products
-    return NextResponse.redirect(
-      new URL(
-        pathname.replace(
-          `/${defaultLocale}`,
-          pathname === `/${defaultLocale}` ? "/" : ""
-        ),
-        request.url
-      )
-    );
-  }
+
 
   
   // Check if there is any supported locale in the pathname

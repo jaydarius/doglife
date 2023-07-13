@@ -43,8 +43,7 @@ export default function MusicPage({params}: {params: {lng: string}}) {
         <div className="border-t">
           <div className="bg-background">
             <div className="grid lg:grid-cols-5">
-              
-              <Sidebar playlists={playlists} className="hidden lg:block" />
+              <h1>{params.lng}</h1>
               <div className="col-span-3 lg:col-span-4 lg:border-l">
                 <div className="h-full px-4 py-6 lg:px-8">
                   <Tabs defaultValue="music" className="h-full space-y-6">
@@ -59,7 +58,6 @@ export default function MusicPage({params}: {params: {lng: string}}) {
                         </TabsTrigger>
                       </TabsList>
                       <div className="ml-auto mr-4">
-                      <h1>{params.lng}</h1>
                         <Button>
                           <PlusCircledIcon className="mr-2 h-4 w-4" />
                           Add music
