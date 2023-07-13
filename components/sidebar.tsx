@@ -175,12 +175,14 @@ const Library = () => <div className="px-3 py-2">
 </div>
 </div>
 
+// @ts-ignore
 const Playlists = ({playlists}) => <div className="py-2">
 <h2 className="relative px-7 text-lg font-semibold tracking-tight">
   Playlists
 </h2>
 <ScrollArea className="h-[300px] px-1">
   <div className="space-y-1 p-2">
+  {/* @ts-ignore */}
     {playlists?.map((playlist, i) => (
       <Button
         key={`${playlist}-${i}`}
